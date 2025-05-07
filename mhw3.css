@@ -1,0 +1,1588 @@
+body {
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
+    text-align: center;
+    overflow-x: hidden; /*Mi dava un problema con la foto che usciva e allargava la pagina*/
+    width: 100vw;
+}
+
+/* HEADER */
+header {
+    background-color: white;
+    padding: 5px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;  /*Evita che il contenuto venga tagliato */
+  padding: 5px 0;
+}
+
+/*Sezione sinistra: Servizio clienti e Negozi */
+.header-left {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header-left a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  margin-right: 15px;
+  white-space: nowrap; /*Evita che il testo vada a capo */
+}
+
+/*Sezione destra: Icone */
+.header-right {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header-right a {
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  margin-left: 15px;
+}
+
+header .lnr{
+  margin: 0 6px;
+}
+
+/* LOGO */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.logo {
+    width: 120px;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /*avendo display:flex uso gap che é intrinseca di flexbox e mi impedisce di usare margin per ogni elemento figlio (lo stesso vale per quelli sotto) */
+    margin-bottom: 10px;
+}
+
+.menu-item{
+  margin-bottom: 0.5px;
+  padding-bottom: 0.1px; 
+}
+
+/*serve per far si che il menu sia visibile anche mentre ti sposti per andarci sopra*/
+.menu-item:hover{
+  display: block;
+}
+
+.menu-item a {
+    position: relative;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 20px; 
+    font-size: 18px;
+}
+
+/* Hamburger visibile solo su mobile */
+.hamburger {
+  display: none;
+  position: absolute;
+  top: 10px;      /* più alto → valore più piccolo */
+  right: 10px;    /* più a destra → valore più piccolo */
+  z-index: 1000;  /* così sta sopra tutto */
+  font-size: 28px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: black;
+}
+
+/* Menu mobile nascosto di default */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background-color: white;
+  position: absolute;
+  top: 90px;
+  left: 0;
+  width: 100%;
+  z-index: 19;
+  border-top: 1px solid #ccc;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu li {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.mobile-menu li a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.mobile-menu li a:hover {
+  border-bottom: solid black;
+}
+
+/* Mostra hamburger e nasconde nav su mobile */
+@media (max-width: 1400px) {
+  nav {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+
+
+/* MENU A TENDINA */
+/*PARTE GENERALE CHE RIGUARDA TUTTE LE SEZIONI*/
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%); /*sposto il menu a tendina a sinistra per accentrarlo*/
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  padding: 30px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+ letter-spacing: 8%;
+}
+
+.submenu h3 {
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 5% 0% 0% 30%;
+  font-size: 15px;
+}
+
+.submenu p, .vedi-tutti {
+  cursor: pointer;
+  text-align: left;
+  padding-left: 30%;
+  font-weight: 100;
+  font-size: 15px;
+}
+
+.submenu p:hover {
+  text-decoration: underline;
+}
+
+.vedi-tutti:hover {
+  text-decoration: underline;
+}
+
+/*NOVITA*/
+/*impostazioni della griglia per submenu novità per l'aspetto generale e il testo*/
+.submenu-content-novita{
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  row-gap: 30px;
+  align-items: start;
+  text-align: left;
+  width: 100vw;
+  height: auto;
+  margin-top: -4.2vh;
+  line-height: 1;
+  letter-spacing: 0.1em;
+}
+
+.submenu-content-novita h3{
+  padding-top: 8vh;
+}
+
+.submenu-content-novita h3, .submenu-content-novita p, .vedi-tutti{
+  padding-left: 4vw;
+}
+
+/*imposto le dimesioni del contenitore per l'immagine*/
+.submenu-image-novita{
+  width: 50vw;
+  height: 95vh;
+  overflow: hidden;
+  margin-top: -0.4vh;
+}
+
+/*imposto le caratteristiche che deve avere la foto per centrarla giusta*/
+.novita{
+  height: 85vh;
+  position: relative;
+  right: 15%;
+  top: -0.5vh;
+}
+
+/*impostazione per la colonna colorata per stile e posizionamento*/
+.submenu-content-novita .colonna-2{
+  background-color: rgb(221, 221, 221);
+  border: 1px solid #ccc;
+  height: 95vh;
+  position: relative;
+  top: -0.3vh;
+}
+
+/*UOMO E DONNA SONO MESSI INSIEME PERCHE' SONO QUASI IDENTICI*/
+.submenu-content-uomo, .submenu-content-donna {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 2fr 1fr;
+  row-gap: 30px;
+  align-items: start;
+  text-align: left;
+  padding: 30px;
+  width: 100vw;
+  height: 95vh; 
+  margin-top: -4vh;
+  line-height: 1;
+}
+
+.submenu-content-uomo h3, .submenu-content-uomo p{
+  padding-left: 1vw;
+}
+
+/*impostazioni che riguardano solo il tag new di colore rosso*/
+.scuderia h6{
+  border: 1px solid red;
+  color: red;
+  text-align: center;
+  border-radius: 15px;
+  position:relative;
+  width: 4vw;
+  font-size: 16px;
+  left: 7vw;
+  top: -19vh;
+  font-weight: 100;
+}
+
+.submenu-image-uomo, .submenu-image-donna{
+  width: 33vw;  
+  height: fit-content;
+  margin-top: -4.63vh;
+  overflow: hidden;
+}
+
+.img-uomo, .img-donna{
+  width: auto;
+  height: 73vh;
+  position: relative;
+  right: -1vw;
+}
+
+/*imposto una spaziatura minore per tutti i tag che occupano più di una riga*/
+.piu-righe{
+  line-height: 1.5;
+}
+
+/*setto quale spazio devono occupare ogni sezione sia in riga che in colonna*/
+.abb{
+  grid-column: 1/1; /*deve occupare lo spazio che va dalla collonna 1 alla colonna 1*/
+}
+
+.acc{
+  grid-column: 2/2;
+}
+
+.lifst{
+  grid-column: 2/2;
+  grid-row: 2/2; /*deve occupare lo spazio che inizia nella riga due e finsice alla riga 2*/
+  margin-top: 10%;
+}
+
+.foot{
+  grid-column: 3/3;
+}
+
+.viaggi{
+  grid-column: 3/3;
+  grid-row: 2/2;
+  margin-top: 10%;
+}
+
+/*colonna colorata sia in uomo che in donna*/
+.submenu-content-uomo .colonna-4, .submenu-content-donna .colonna-4{  
+  background-color: rgb(221, 221, 221);
+  width: 20vw;
+  height: 82vh;
+  text-align: center;
+  margin-top: -4.63vh;
+  margin-right: -1vw;
+  padding-top: 8%;
+}
+
+.evidenza{
+  grid-column: 4/4;
+}
+
+.scuderia{
+  grid-column: 4/4;
+  grid-row: 2/2;
+}
+
+.img-uomo, .img-donna{
+  grid-row: 1/1;
+  grid-column: 5/5;
+}
+
+/*FORMULA 1*/
+.submenu-content-f1{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 30px;
+  align-items: start;
+  text-align: start;
+  justify-items: start;
+  width: 100vw;
+  height: 100vh;
+  margin-top: -4.3vh;
+  line-height: 1;
+}
+
+/*riguardano solo l'unica colonna di testo*/
+.submenu-content-f1 .replica{
+  grid-column: 1/1;
+  width: 100%;
+  margin-top: -0.5vh;
+  margin-left: -10vw;
+  top:-10%;
+}
+
+.submenu-content-f1 .replica h3{
+  padding-top: 10%;
+}
+
+/*imposto un font leggermente più grande rispetto all'impostazione
+ di submenu generale in modo da riempire la pagina (Come è fatto 
+ nel sito originale)*/
+.replica h3, .replica p{
+  font-size: 18px;
+}
+
+/*imposto quale spazio della griglia deve occupare
+e le dimensioni che deve avere per poter inserire la foto */
+.submenu-image-f1{
+  grid-column: 2/2;
+  width: 50vw;
+  height: 100vh;
+  position: relative;
+  top: 0vh;
+  overflow: hidden;
+}
+
+.img-f1{
+  height: 97.5vh;
+  position: relative;
+  right: 25%;
+  bottom: 2.5%;
+  margin-right: 15%;
+}
+
+
+/*BAMBINI*/
+.submenu-content-bambino{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr;
+  row-gap: 30px;
+  align-items: start;
+  text-align: left;
+  width: 100vw;
+  height: 100vh;
+  margin-top:  -4vh;
+  margin-left: 0vw;
+  line-height: 1;
+}
+
+.submenu-content-bambino h3, .submenu-content-bambino p{
+  font-size: 17px;
+  padding-left: 5vw;
+}
+
+.submenu-content-bambino h3{
+  padding-top: 5vh;
+}
+
+/*definisco la posizione che deve occupare ogni sezione*/
+.bambino-2-13{
+  grid-column: 1/1;
+  width: 100%;
+}
+
+.bambina-2-13{
+  grid-column: 2/2;
+}
+
+.mesi-0-24{
+  grid-column: 2/2;
+  grid-row: 2/2;
+}
+
+.scuderia-bmb{
+  grid-column: 3/3;
+}
+
+/*imposto oltre che la posizione nella griglia anche le
+dimensioni che deve avere*/
+.submenu-image-bambino{
+  grid-column: 4/4;
+  margin-top: -0.3vh;
+  margin-left: 4vw;
+  width: 36vw;
+  height: fit-content;
+  overflow: hidden;
+}
+
+/*dimensioni della foto per poterla centrare*/
+.img-bmb{
+  width: 60vw;
+  height: 85vh;
+  position: relative;
+  right: 13vw;
+}
+
+/*OCCHIALI*/
+.submenu-content-occhi{
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  row-gap: 30px;
+  align-items: start;
+  text-align: left;
+  justify-items: start;
+  width: 100vw;
+  height: auto;
+  margin-top: -4vh;
+  margin-left: 0vw;
+  line-height: 1.10;
+  letter-spacing: 5%;
+}
+
+/*impostazioni specifiche per il submenu occhiali che sono leggermente
+diversi rispetto a quello generale*/
+.submenu-content-occhi h3{
+  padding-top: 4vh;
+}
+
+.submenu-content-occhi h3, .submenu-content-occhi p{
+  font-size: 18px;
+}
+
+/*indico il posto che deve occupare ogni elemento all'interno
+della griglia*/
+.ferr-coll{
+  grid-column: 1/1;
+  width: 100%; 
+  margin-left: -15%;
+}
+
+.rb-ferr{
+  grid-column: 2/2;
+  width: 100%;
+}
+
+.submenu-image-occhiali{
+  grid-column: 3/3;
+  width: 50vw;
+  height: fit-content;
+  margin-top: -0.30vh;
+  margin-left: 4vw;
+  overflow: hidden;
+}
+
+.img-occhi{
+  width: 70vw;
+  height: 100%;
+  position:relative;
+  right: 10vw;
+  top: 0;
+}
+
+/*impostazioni della colonna colorata*/
+.submenu-content-occhi .colonna-2{
+  background-color: rgb(221, 221, 221);
+  height: 100vh;
+  width: 27vw;
+  margin-top: -0.30vh;
+  margin-right: -35vw;
+}
+
+.submenu-content-occhi .colonna-2 h3{
+  padding-top: 5vh;
+}
+
+.submenu-content-occhi .colonna-2 h3, .submenu-content-occhi .colonna-2 p{
+  margin-left: -4vw;
+}
+
+/*COLLECTIBLES*/
+.submenu-content-collect{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: start;
+  text-align: left;
+  justify-items: start;
+  width: 100vw;
+  height: 100vh;
+  margin-top: -4.5vh;
+  line-height: 1;
+  letter-spacing: 10%;
+}
+
+/*rispetto alle impostazioni per h3 e p definite all'inizio
+devono esserci degli spostamenti più specifici*/
+.submenu-content-collect h3{
+  padding-top: 4vh;
+}
+
+.submenu-content-collect h3, .submenu-content-collect p{
+  padding-left: 3vw;
+}
+
+/*impostazioni che riguardano dove collocare ogni elemento nella griglia*/
+.aut-pie{
+  grid-column: 1/1;
+}
+
+.his-pie{
+  grid-column: 1/1;
+  grid-row: 2/2;
+}
+
+
+.submenu-content-collect .colonna-1{
+  line-height: 1.25;
+  height: 100vh;
+  margin-top: 0vh;
+  margin-left: 0vw;
+  padding-top: 3vh;
+  padding-right: 2vw;
+}
+
+.submenu-content-collect .colonna-1 h3, .submenu-content-collect .colonna-1 p{
+  font-size: 18px;
+}
+
+.replica{
+  grid-column: 2/2;
+}
+
+.replica h3{
+  padding-top: 25%;
+}
+
+.replica h3, .replica p{
+  font-size: 15px;
+}
+
+.pubb{
+  grid-column: 2/2;
+  grid-row: 2/2;
+}
+
+.pubb h3, .his-pie h3{
+  padding-top: 10%;
+}
+
+.pubb p{
+  line-height: 1.3;
+}
+
+.exclu{
+  grid-column: 3/3;
+}
+
+.submenu-image-collect{
+  grid-column: 4/4;
+  width: 35vw;
+  height: fit-content;
+  margin-top: 0vw;
+  overflow: hidden;
+}
+
+
+.img-coll{
+  width: 40vw;
+  height: 100%;
+  position: relative;
+  right: 3vw;
+  top: -2vh;
+}
+
+.submenu-content-collect .colonna-3{
+  background-color: rgb(221, 221, 221);
+  height: 100vh;
+  width: 25vw;
+  text-align: center; 
+  line-height: 1.5;
+  margin-top: 0;
+  padding-top: 2vh;
+}
+
+.submenu-content-collect .colonna-3 h3{
+  padding-top: -70%;
+}
+
+
+/*REGALI*/
+.submenu-content-regali{
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  row-gap: 30px;
+  align-items: start;
+  text-align: left;
+  width: 100vw;
+  height: 100vh;
+  margin-top: -4.5vh;
+  line-height: 1;
+  letter-spacing: 10%;
+}
+
+.submenu-content-regali h3{
+  padding-top: 8vh;
+}
+
+.submenu-content-regali h3, .submenu-content-regali p{
+  padding-left: 4vw;
+}
+
+.submenu-content-regali p{
+  line-height: 1.5;
+}
+
+.regali{
+  grid-column: 1/1;
+}
+
+.gifts{
+  grid-column: 2/2;
+}
+
+.submenu-content-regali .colonna-2{
+  background-color: rgb(221, 221, 221);
+  height: 100vh;
+  text-align: center; 
+  line-height: 1.5;
+  margin-top: 0; 
+}
+
+.submenu-image-regali{
+  grid-column: 3/3;
+  width: 50vw;
+  height: 100vh;
+  margin-top: -2vh;
+  overflow: hidden;
+}
+
+.submenu-image-regali .img-reg{
+  width: 75vw;
+  height: 100vh;
+  position: relative;
+  right: 10vw;
+  top: 2vh;
+}
+
+/*LIFESTYLE*/
+.submenu-content-lifestyle{
+  display: grid;
+  grid-template-columns: 2fr 2fr 1.5fr 1fr;
+  row-gap: 30px;
+  align-items: start;
+  text-align: left;
+  width: 100vw;
+  height: 100vh;
+  margin-top: -4.5vh;
+  line-height: 1;
+  letter-spacing: 10%;
+}
+
+.submenu-content-lifestyle h3{
+  padding-top: 5vh;
+}
+
+.submenu-content-lifestyle h3, .submenu-content-lifestyle p{
+  padding-left: 3vw;
+}
+
+.submenu-content-lifestyle .colonna-3{
+  background-color: rgb(221, 221, 221);
+  width: 22vw;
+  height: 100vh;
+  text-align: center;
+  margin-top: 0;  
+}
+
+.exp{
+  grid-column: 1/1;
+  line-height: 1.5;
+}
+
+.collab{
+  grid-column: 2/2;
+  line-height: 1.3;
+}
+
+.collab h6{
+  border: 1px solid red;
+  color: red;
+  text-align: center;
+  border-radius: 15px;
+  width: 4vw;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.collab .uno {
+  position:relative;
+  left: 11vw;
+  top: -16.55vh
+}
+
+.collab .tre{
+  position: relative;
+  left: 13vw;
+  top: -11vh;
+}
+
+.uni-fer{
+  grid-column: 3/3;
+  line-height: 1.5;
+}
+
+.fash-sh{
+  grid-column: 3/3;
+  grid-row: 2/2;
+}
+
+.submenu-image-lifestyle{
+  grid-column: 4/4;
+  width: 31vw;
+  height: fit-content;
+  margin-top: 0;
+  overflow: hidden;
+}
+
+.img-list{
+  width: 35vw;
+  height: auto;
+  position: relative;
+  right: 3vw;
+  bottom: 2vh;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal.visible {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+  text-align: center;
+}
+
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Effetti hover per le voci del menu */
+.menu-item a:hover {
+  border-bottom: 3px solid black;
+  text-decoration: underline;
+  
+}
+
+.menu-item:hover .submenu, .submenu:hover {
+  display: block;
+}
+
+/* BANNER */
+.banner {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover; /*ho usato questo (anziché backgroud-size:cover) perché non da problemi con l'immagine (non viene ristretta quando si passa a mobile) */
+    margin-top: 185px;
+}
+
+/* SEZIONE PRODOTTI */
+h2 {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.nuovo-label{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: black;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 15px;
+    z-index: 1;
+}
+
+.preorder-label {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    height: 15px;
+    line-height: 16px;
+    width: auto;
+    background-color: black;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 500px;
+    font-size: 15px;
+    z-index: 1;
+    text-align: center;
+}
+
+
+.product-container {
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+  justify-content: center;
+}
+
+
+/*Sono varie media query per vari formati dello schermo (in altri modi da problemi su mobile rimpicciolendo troppo le immagini)*/
+
+/*Schermi grandi*/
+@media (min-width: 1025px) {
+  .product-card {
+      flex: 1 1 25%;
+      min-width: 250px;
+      max-width: 25%;
+  }
+}
+
+/*laptop*/
+@media (max-width: 1024px) and (min-width: 600px) {
+  .product-container {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      justify-content: flex-start;
+  }
+  .product-card {
+      flex: 0 0 25%;
+      min-width: 250px;
+      max-width: 25%;
+  }
+}
+
+/*mobile*/
+@media (max-width: 600px) {
+  .product-container {
+      flex-direction: column;
+      align-items: center;
+      overflow: visible;
+  }
+  .product-card {
+      width: 100%;
+      max-width: 400px;
+  }
+}
+
+.product-card {
+    color: black;
+    padding: 15px;
+    border-radius: 8px;
+    width: 400px;
+    position: relative;
+    text-align: left;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.price {
+    color: black;
+}
+
+/*FUNZIONALITA CAMBIO IMMAGINE*/
+.image-slider {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: black;
+  padding: 5px 12px;
+  cursor: pointer;
+  z-index: 1;
+  user-select: none;
+  border-radius: 50%;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+
+@media (max-width: 600px) {
+
+    body{
+      width: 140vw;
+    }
+    nav {
+        display: flex;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding: 10px 0;
+        gap: 5px;
+        justify-content: flex-start;
+        font-size: 12px;
+        width: 100%;
+    }
+
+    .menu-item {
+        flex-shrink: 0;
+        padding: 5px 8px;
+    }
+
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banner {
+        height: 500px;
+        width: 500px;
+        margin-top: 210px;
+    }
+    
+}
+
+/* SEZIONE ABBIGLIAMENTO */
+#abbigliamento-uomo {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 40px 20px;
+}
+
+.image-box {
+    position: relative;
+    width: 45%;
+}
+
+.image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.text-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: auto;
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+}
+
+.text-overlay:hover {
+    background-color: #ff1100;
+}
+
+@media (max-width: 600px) {
+    #abbigliamento-uomo {
+        flex-direction: column;
+    }
+
+    .image-box {
+        width: 100%;
+    }
+}
+
+/* SEZIONE ESSENZIALI FERRARI */
+#essenziali-ferrari {
+    display: flex;
+    justify-content: flex-start;
+    padding: 50px 20px;
+}
+
+.essentials-container {
+    display: flex;
+    align-items: center;
+    max-width: 1400px;
+    width: 100%;
+    gap: 80px;
+}
+
+.essentials-image {
+    height: auto;
+    width: 50vw;
+}
+
+.essentials-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.essentials-text {
+    width: 35%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.essentials-text h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.essentials-text p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.essentials-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.essentials-button:hover{
+    background-color: #ff1100;
+}
+
+@media (max-width: 768px) {
+    .essentials-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .essentials-image, .essentials-text {
+        width: 100%;
+    }
+
+    .essentials-text h2 {
+        font-size: 28px;
+    }
+
+    .essentials-button {
+        padding: 10px 20px;
+    }
+}
+
+
+/* SEZIONE ACCESSORI ICONICI */
+#accessori-iconici {
+    padding: 50px 20px;
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+  
+  .iconics-container {
+    justify-content: left;
+  }
+  
+  .iconics-image {
+    display: block;
+    margin: 0 auto;
+    width: 180vh;
+    height: auto;
+  }
+  
+  .iconics-text {
+    text-align: left;
+    margin: 20px 0 0 0%; /*Sposta il testo verso sinistra, sotto l'immagine */
+  }
+  
+  .iconics-text h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 20px 0 0 -1%;
+    color: black;
+  }
+  
+  .iconics-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .iconics-button:hover {
+    background-color: #ff1100;
+  }
+
+  @media (max-width: 600px) {
+    #accessori-iconici {
+      padding: 30px 10px;
+    }
+    
+    .iconics-image {
+      width: 100%;
+    }
+    
+    .iconics-text {
+      margin: 15px 0 0 0%;
+    }
+    
+    .iconics-text h2 {
+      font-size: 24px;
+      margin: 15px 0 0 -3%;
+    }
+    
+    .iconics-button {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  }
+
+  /* SEZIONE FLAGSHIP STORE */
+#flagship-store {
+    background-color: #a40000; /*Rosso Ferrari */
+    padding: 50px 0;
+  }
+  
+  .flagship-container {
+    display: flex;
+    align-items: center;
+    max-width: 1700px;
+    margin: 0 auto;
+    gap: 40px;
+  }
+  
+  .flagship-image {
+    width: 50%;
+    height: auto;
+    display: block;
+  }
+  
+  .flagship-text {
+    color: white;
+    width: 50%;
+    text-align: left;
+  }
+  
+  .flagship-text h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .flagship-text p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .discover {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid white;
+    padding-bottom: 2px;
+  }
+  
+  .discover:hover {
+    color: #ff1100;
+    border-bottom: 2px solid #ff1100;
+  }
+  
+  /* SEZIONE TROVA STORE */
+  .store-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30px;
+  }
+  
+  .store-discover {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .find-button {
+    padding: 12px 24px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    font-weight: bold;
+  }
+  
+  .find-button:hover {
+    background-color: white;
+    color: #a40000;
+  }
+
+@media (max-width: 768px) {
+    .flagship-container {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .flagship-image {
+      width: 90%;
+    }
+    
+    .flagship-text {
+      width: 90%;
+    }
+    
+    .find-button {
+      width: 100%;
+    }
+  }
+
+/* FOOTER */
+footer {
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .footer-top {
+    font-weight: bold;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(218, 216, 216);
+  }
+
+  .iscriviti{
+    border: 2px solid rgb(223, 223, 223);
+    background-color:  rgb(223, 223, 223);
+    height: 45vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+  }
+  
+  @media (max-width: 768px) {
+    .iscriviti{
+      height: 65vh;
+    }  
+  }
+  
+  .iscriviti h4{
+    margin-top: -5vh;
+    font-size: 30px;
+    font-weight: 100;
+    letter-spacing: 0.5px;
+  }
+  
+  @media (max-width:768px){
+    .iscriviti h4{
+      margin-top: 0vh;
+      font-size: 25px;
+      width: 65vw;
+    }
+  }
+  
+  .iscriviti p{
+    font-weight: 100;
+    letter-spacing: 0.5px;
+    width:60vw;
+    margin-top: -1vh ;
+    font-size:15px;
+    color: rgb(78, 78, 78);
+  }
+  
+  @media (max-width: 768px){
+    .iscriviti p{
+        font-size: 18px;
+      width: 85vw;
+    }
+  }
+  
+  .iscriviti .box-email{
+    width: 25vw;
+    text-align: left;
+    font-weight: 200;
+    padding-left: 0.5vw;    
+    letter-spacing: 0.75px;
+    color: rgb(122, 117, 117);
+    border-bottom: 1px solid  rgb(79, 77, 77);
+  }
+  
+  @media (max-width: 768px){
+    .iscriviti .box-email{
+      width: 80vw;
+      font-size: 18px;
+      padding-left: 3vw;
+    }
+  }
+  
+  .avviso{
+    color:red;
+    font-size: 15px;
+    font-weight: 100;
+    margin-top: 1vh;
+    text-align: left;
+    width: 25vw;
+  }
+  
+  
+  .bottone-iscriviti{
+    border: 2px solid  rgb(122, 117, 117);
+    background-color: rgb(255, 255, 255);
+    color: rgb(93, 93, 93);
+    font-weight: 150;
+    margin-top:5vh;
+    width: 10vw;
+    height: 5vh;
+    padding-top: 10px;
+    border-radius: 30px;
+    letter-spacing: 0.5px;
+  }
+  
+  @media (max-width:768px){
+    .bottone-iscriviti{
+      width: 40vw;
+      margin-right: 5vw;
+      padding-right: 5px;
+      padding-top: 5px;
+    }
+  }
+  
+  .bottone-iscriviti:hover
+  {
+    border: 2px solid red;
+    background-color: red;
+    color:white;
+    cursor: pointer;
+  }
+    
+  .footer-middle {
+    margin: 20px 0;
+  }
+  
+  .scroll-top {
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 20px 0;
+  }
+  
+  .footer-column h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .footer-column a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 5px;
+  }
+  
+  .footer-column a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid black;
+  }
+  
+  .site-map {
+    display: block;
+    font-weight: bold;
+    color: black;
+    margin-top: 10px;
+  }
+  
+  .footer-social {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+
+    .footer-links {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .footer-column {
+      width: 100%;
+    }
+  }
+
+  /* API PAGAMENTO */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* sfondo trasparente */
+  display: none; /* inizialmente nascosto */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* assicura che si sovrapponga sopra altri elementi */
+}
+
+.modal.visible {
+  display: flex; /* mostra il modal quando ha la classe 'visible' */
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+/*PRODOTTI STRIPE*/
+#products-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.product {
+  border: 1px solid #ccc;
+  padding: 15px;
+  text-align: center;
+  width: 250px;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.product img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.product h3 {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+.product p {
+  color: #555;
+  font-size: 0.95em;
+}
+
+
+
+

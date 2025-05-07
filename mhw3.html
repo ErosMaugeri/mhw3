@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferrari Store</title>
+  <link rel="stylesheet" href="mhw3.css">
+  <script src="mhw3.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css"> <!--link icone-->
+
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo-container">
+      <img src="logo_ferrari.png" alt="Ferrari Logo" class="logo">
+    </div>
+    <div class="header-top">
+      <div class="header-left">
+          <a href="#"><span class="lnr lnr-phone-handset"></span>Servizio clienti</a> <!--Codici per le emoji-->
+          <a href="#"><span class="lnr lnr-map-marker"></span>Negozi</a>
+      </div>
+      <div class="header-right">
+        <div class="hamburger" id="hamburger">
+          <span class="lnr lnr-menu"></span> 
+        </div>
+        
+        <div class="mobile-menu" id="mobileMenu">
+          <ul>
+            <li><a href="#">Novità</a></li>
+            <li><a href="#">Uomo</a></li>
+            <li><a href="#">Donna</a></li>
+            <li><a href="#">Formula 1</a></li>
+            <li><a href="#">Bambini</a></li>
+            <li><a href="#">Occhiali</a></li>
+            <li><a href="#">Collectibles</a></li>
+            <li><a href="#">Regali</a></li>
+            <li><a href="#">Lifestyle</a></li>
+          </ul>
+        </div>        
+          <a href="#"><span class="lnr lnr-magnifier"></span></a>
+          <a href="#"><span class="lnr lnr-star"></span></a>
+          <a href="#"><span class="lnr lnr-user"></span></a>
+          <a href="#"><span class="lnr lnr-cart"></span></a>
+      </div>
+  </div>
+  <nav>
+    <div class="dropdown">
+    <div class="menu-item" id="novita">
+        <a href="#">Novità</a>
+        <div class="submenu">
+          <div class="submenu-content-novita">
+            <!--COLONNA 1-->
+              <div class="lifestyle">
+                <h3>LIFESTYLE</h3>
+                <p>NUOVI ARRIVI UOMO</p>
+                <p>NUOVI ARRIVI DONNA</p>
+                <p>JUMPERS</p>
+                <p>CAPPELLINI</p>
+                <p>BORSE A MANO</p>
+                <p>SNEAKERS</p>
+                <p>T-SHIRT</p>
+                <div class="vedi-tutti" data-info="Vedi tutti i prodotti Novità: In questa sezione troverai tutte le novità Ferrari, dagli accessori alla moda.">VEDI TUTTI</div>
+              </div>
+
+              <!--COLONNA 2-->
+              <div class="colonna-2">
+                <div class="formula-1">
+                  <h3>FORMULA 1</h3>
+                  <p>CAP</p>
+                  <p>T-SHIRT</p>
+                  <p>SCARPE PUMA</p>
+                  <p>FELPE</p>
+                  <p>POLO</p>
+                  <p>GIACCHE E CAPISPALLA</p>
+                </div>
+              </div>
+              <div class="submenu-image-novita">
+                  <img src="novita-image.jpg" alt="Immagine Novita" class="novita">
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-item" id="uomo">
+        <a href="#">Uomo</a>
+        <div class="submenu">
+          <div class="submenu-content-uomo">
+
+              <!--COLONNA 1-->
+              <div class="abb">
+                <h3>ABBIGLIAMENTO</h3>
+                <p>MAGLIERIA E FELPE</p>
+                <p>T-SHIRT</p>
+                <p>POLO</p>
+                <p class="piu-righe">GIACCHE E</br> CAPISPALLA</p>
+                <p>PANTALONI</p>
+                <p>CAMICIE</p>
+                <p>TUTE</p>
+                <p>INTIMO E CALZE</p>
+                <p>VEDI TUTTI</p>
+              </div>
+              
+              <!--COLONNA 2-->
+              <div class="colonna-2">
+                <div class="acc">
+                  <h3>ACCESSORI</h3>
+                  <p>CAPPELLINI</p>
+                  <p>KEYCHANS </p>
+                  <p>GUANTI</p>
+                  <p>GIOIELLI</p>
+                  <p>CINTURE</p>
+                  <p>SCIARPE E STOLE</p>
+                  <p>VEDI TUTTI</p>
+                </div>
+
+                <div class="lifst">
+                  <h3>LIFESTYLE</h3>
+                  <p>GIOCHI DA TAVOLO</p>
+                  <p>MONTBLANC FOR FERRARI </p>
+                  <p class="piu-righe">BANG & OLUFSEN</br> X FERRARI</p>
+                </div>
+              </div>  
+
+              <!--COLONNA 3-->
+              <div class="colonna-3">
+                <div class="foot">
+                  <h3>FOOTWEAR</h3>
+                  <p>SNEAKER</p>
+                  <p>SLIPPER E SANDALI </p>
+                  <p>SCARPE E STIVALI</p>
+                  <p>VEDI TUTTI</p>
+                </div>
+
+                <div class="viaggi">
+                  <h3 class="piu-righe">VIAGGIO E ARTICOLI IN</br> PELLE</h3>
+                  <p>ZAINI</p>
+                  <p>BORSE E ACCESSORI DA VIAGGIO </p>
+                  <p>PORTAFOGLI</p>
+                  <p>OMBRELLI</p>
+                  <p>VEDI TUTTI</p>
+                </div>
+              </div>
+
+              <!--COLONNA 4-->
+              <div class="colonna-4">
+                <div class="evidenza">
+                  <h3>HIGHLIGHTS</h3>
+                  <p class="piu-righe">NUOVI ARRIVI</br>UOMO</p>
+                  <p>REGALI PER LUI </p>
+                  <p class="piu-righe">BANG & OLUFSEN</br>X FERRARI</p>
+                </div>
+  
+                <div class="scuderia">
+                  <h3 class="piu-righe">SCUDERIA</br> FERRARI</h3>
+                  <p class="piu-righe"> 
+                    REPLICA </br>
+                    SCUDERIA  </br>
+                    FERRARI  
+                  </p> 
+                  <p>  SCARPE PUMA</p>
+                  <p>REGALI FORMULA 1</p>
+                  <h6>NEW</h6>
+                </div>
+              </div>
+        
+              <!-- Colonna 5 -->
+              <div class="submenu-image-uomo">
+                <img src="ferr-uom.jpg" alt="uomo" class="img-uomo">
+              </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="menu-item" id="donna">
+        <a href="#">Donna</a>
+        <div class="submenu">
+          <div class="submenu-content-donna">
+
+            <!--COLONNA 1-->
+            <div class="abb">
+              <h3>ABBIGLIAMENTO</h3>
+              <p>ABITI</p>
+              <p>GIACCHE</p>
+              <p>MAGLIONI E FELPE</p>
+              <p>T-SHIRT</p>
+              <p>CAMICIE & TOP</p>
+              <p>PANTALONI</p>
+              <p>GONNE</p>
+              <p>TUTE</p>
+              <p>POLO</p>
+              <p>INTIMO E CALZE</p>
+              <p>VEDI TUTTI</p>
+            </div>
+
+            <!--COLONNA 2-->
+            <div class="colonna-2">
+              <div class="acc">
+                <h3>ACCESSORI</h3>
+                <p>CAPPELLINI</p>
+                <p>CINTURE</p>
+                <p>SCIARPE E GUANTI</p>
+                <p>PICCOLI ARTICOLI IN PELLE</p>
+                <p>OMBRELLI</p>
+                <p>VEDI TUTTI</p>
+              </div>
+
+              <div class="foot">
+                <h3>SCARPE</h3>
+                <p>SNEAKER</p>
+                <p>SCARPE CON TACCO </p>
+                <p>SCARPE E STIVALI</p>
+                <p>SLIPPER E SANDALI</p>
+                <p>VEDI TUTTI</p>
+              </div>
+            </div>
+
+            <!--COLONNA 3-->
+            <div class="colonna-3">
+              <div class="gioielli">
+                <h3>GIOIELLI</h3>
+                <p>BRACCIALI</p>
+                <p>COLLANE</p>
+                <p>ORECCHINI</p>
+                <p>ANELLI</p>
+                <p>VEDI TUTTI</p>  
+              </div>
+
+              <div class="viaggi">
+                <h3>BORSE E VIAGGIO</h3>
+                <p>BORSE A MANO</p>
+                <p>BORSE A SPALLA E TRACOLLA</p>
+                <p>MINI BORSE</p>
+                <p>BORSE SHOPPING</p>
+                <p>BORSE E ACCESSORI DA VIAGGIO</p>
+                <p>ZAINI E MARSUPI</p>
+                <p>VEDI TUTTI</p>
+              </div>
+            </div>
+            
+            <!--COLONNA 4-->
+            <div class="colonna-4">
+              <div class="evidenza">
+                <h3>HIGHLIGHTS</h3>
+                <p>NUOVI ARRIVI DONNA</p>
+                <p>REGALI PER LEI </p>
+                <p>GIFT CARD</p>
+              </div>
+
+              <div class="scuderia">
+                <h3>SCUDERIA FERRARI</h3>
+                <p class="piu-righe"> 
+                  REPLICA </br>
+                  SCUDERIA  </br>
+                  FERRARI  
+                </p> 
+                <p>  SCARPE PUMA</p>
+                <p>REGALI FORMULA 1</p>
+              </div>
+            </div>
+
+            <!-- Colonna 5 -->
+            <div class="submenu-image-donna">
+              <img src="ferr-donn.jpg" alt="donna" class="img-donna">                 
+            </div>
+
+          </div>
+        </div>
+    </div>
+    <div class="menu-item" id="formula-1">
+        <a href="#">Formula 1</a>
+        <div class="submenu">
+          <div class="submenu-content-f1">
+            <div class="replica">
+              <h3>REPLICA SCUDERIA FERRARI</h3>
+              <p>T-SHIRT</p>
+              <p>POLO</p>
+              <p>GIACCHE E CAPISPALLA</p>
+              <p>FELPE</p>
+              <p>CAP</p>
+              <p>SCARPE PUMA</p>
+              <p>HYPERCAR COLLECTION</p>
+              <p>VEDI TUTTI</p>
+            </div>
+
+            <div class="submenu-image-f1">
+              <img src="F1-image.jpg" alt="f1" class="img-f1">                    
+            </div>
+          </div> 
+        </div>
+    </div>
+
+    <div class="menu-item" id="bambini">
+      <a href="#">Bambini</a>
+      <div class="submenu">
+        <div class="submenu-content-bambino">
+          <!--COLONNA 1-->
+          <div class="bambino-2-13">
+            <h3>BAMBINO 2-13 ANNI</h3>
+            <p>CAPPELLINI</p>
+            <p>GIACCHE E FELPE</p>
+            <p>T-SHIRTS</p>
+            <p>POLO</p>
+            <p>PANTALONI</p>
+            <p>VEDI TUTTI</p>
+          </div>
+
+          <!--COLONNA 2-->
+          <div class="colonna-2">
+            <div class="bambina-2-13">
+              <h3>BAMBINA 2-13 ANNI</h3>
+              <p>PANTALONI E ABITI</p>
+              <p>CAPPELLINI</p>
+              <p>VEDI TUTTI</p>
+            </div>
+
+            <div class="mesi-0-24">
+              <h3>0-24 MESI</h3>
+              <p>VEDI TUTTI</p>
+            </div>
+          </div>
+
+          <!--COLONNA 3-->
+          <div class=".scuderia-bmb">
+            <h3>SCUDERIA FERRARI</h3>
+            <p>REPLICA SCUDERIA FERRARI</p>
+            <p>SCARPE PUMA</p>
+          </div>
+          <!--COLONNA 4-->
+          <div class="submenu-image-bambino">
+            <img src="ferr-bamb.jpg" alt="bmb" class="img-bmb">                    
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <!--OCCHIALI-->
+  <div class="menu-item" id="occhiali">
+    <a href="#">Occhiali</a>
+    <div class="submenu">
+      <div class="submenu-content-occhi">
+        
+        <!--COLONNA 1-->
+        <div class="ferr-coll">
+          <h3>FERRARI COLLECTION</h3>
+          <p>OCCHIALI DA SOLE</p>
+          <p>OCCHIALI DA SOLE RUNWAY</p>
+          <p>VEDI TUTTI</p>
+        </div>
+        
+        <!--COLONNA 2-->
+        <div class="colonna-2">
+          <div class="rb-ferr">
+            <h3>RAY-BAN FOR SCUDERIA FERRARI</h3>
+            <p>OCCHIALI DA SOLE</p>
+            <p>LIMITED EDITION</p>
+            <p>VEDI TUTTI</p>
+          </div>
+        </div>
+        
+        <!--COLONNA 3-->
+        <div class="submenu-image-occhiali">
+          <img src="ferr-occh.jpg" alt="occ" class="img-occhi">                      
+        </div>
+      </div>
+    </div>
+</div>
+
+  <!--COLLECTIBLES-->
+<div class="menu-item" id="collectibles">
+  <a href="#">Collectibles</a>
+  <div class="submenu">
+    <div class="submenu-content-collect">
+      
+      <!--COLONNA 1-->
+      <div class="colonna-1">
+        <div class="aut-pie">
+          <h3>PEZZI AUTENTICI</h3>
+          <p>ALTRI ARTICOLI AUTENTICI</p>
+        </div>
+        <div class="his-pie">
+          <h3>PEZZI STORICI</h3>
+          <p>COMPONENTI</p>
+        </div>
+      </div>
+
+      <!--COLONNA 2-->
+      <div class="colonna-2">
+        <div class="replica">
+          <h3>REPLICHE E MODELLI IN SCALA</h3>
+          <p>MACCHINE</p>
+          <p>CASCHI</p>
+          <p>ARTICOLI F1</p>
+          <p>ALTRI MODELLI IN SCALA</p>
+          <p>VIEW ALL</p>
+        </div>
+        <div class="pubb">
+          <h3>PUBBLICAZIONI</h3>
+          <p>SCULPTURE BOOK</p>
+          <p>ANNUARI E PUBBLICAZIONI</p>
+          <p>VEDI TUTTI</p>
+        </div>
+      </div>
+
+      <!--COLONNA 3-->
+      <div class="colonna-3">
+        <div class="exclu">
+          <h3>COLLEZIONI ESCLUSIVE</h3>
+          <p>MONTBLANC FOR FERRARI</p>
+          <p>GIOCHI DA TAVOLO</p>
+          <p>BANG &OLUFSEN X FERRARI</p>
+         <p>VEDI TUTTI</p>
+        </div>
+      </div> 
+      
+      <!--COLONNA 4-->
+      <div class="submenu-image-collect">
+        <img src="ferr-collect.jpg" alt="collect" class="img-coll">                      
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+
+  <!--REGALI-->
+<div class="menu-item" id="regali">
+  <a href="#">Regali</a>
+  <div class="submenu">
+      <!--<a href="#">Fanwear</a>
+      <a href="#">Scarpe</a>-->
+    <div class="submenu-content-regali">
+      
+      <!--COLONNA 1-->
+      <div class="colonna-1">
+        <div class="regali">
+          <h3>REGALI</h3>
+          <p>REGALI PER LUI</p>
+          <p>REGALI PER LEI</p>
+          <p>GIFTS KIDS</p>
+          <p>REGALI FORMULA 1</p>
+          <p>REGALI DA COLLEZIONE</p>
+          <p>GIFT CARD</p>
+        </div>
+      </div>
+      
+      <!--COLONNA 2-->
+      <div class="colonna-2">
+        <div class="gifts">
+          <h3>GIFTS IDEAS</h3>
+          <p>REGALI LOGO FERRARI</p>
+          <p>REGALI IN PELLE</p>
+          <p>REGALI LIFESTYLE</p>
+          <p>ICONE MINI</p>
+          <p>REGALI PREZIOSI</p>
+        </div>
+    </div>
+    
+    <!--COLONNA 3-->
+    <div class="submenu-image-regali">          
+      <img src="ferr-reg.jpg" alt="regali" class="img-reg">                      
+    </div>
+  </div>
+  </div>
+</div>
+<div class="menu-item" id="lifestyle">
+  <a href="#">Lifestyle</a>
+  <div class="submenu">   
+    <div class="submenu-content-lifestyle">
+      
+      <!--COLONNA 1-->
+      <div class="exp">
+        <h3>EXPLORE</h3>
+        <p>COLLEZIONE SS25</p>
+        <p>GUIDA AI REGALI</p>
+        <p>REPLICA SCUEDRIA FERRARI</p>
+        <p>FERRARI GT BAG</p>
+      </div>
+
+      <!--COLONNA 2-->
+      <div class="collab">
+        <h3>COLLABORAZIONI</h3>
+        <p>FERRARI EYEWEAR</p>
+        <p>MONTBLANC FOR FERRARI</p>
+        <p> BANG & OLUFSEN PER FERRARI</p>
+
+        <h6 class="uno">NEW</h6>
+        <h6 class="tre">NEW</h6>
+      </div>
+
+      <!--COLONNA 3-->
+      <div class="colonna-3">
+        <div class="uni-fer">
+          <h3>UNIVERSO FERRARI</h3>
+          <p>VISIONE</p>
+          <p>CODICI</p>
+          <p>SOSTENIBILITÀ</p>
+          <p>ICONE</p>
+        </div>
+        <div class="fash-sh">
+          <h3>FASHION SHOW</h3>
+          <p>FASHION SHOW A/I 2025</p>
+          <p>FASHION SHOW P/E 2025</p>
+          <p>FASHION SHOW A/I 2024</p>
+          <p>FASHION SHOW P/E 2024</p>
+          <p>FASHION SHOW A/I 2023</p>
+          <p>FASHION SHOW P/E 2023</p>    
+        </div>
+      </div>
+
+      <!--COLONNA 4-->
+      <div class="submenu-image-lifestyle">          
+        <img src="ferr-ls.jpg" alt="lifestyle" class="img-list">                     
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</nav>
+  </header>
+
+  <!-- BANNER PRINCIPALE -->
+  <section id="hero">
+    <img src="banner.jpg" alt="Ferrari Store Banner" class="banner">
+  </section>
+
+  <!-- SEZIONE NUOVI ARRIVI -->
+  <section id="f1-fanwear">
+    <h2>F1 FANWEAR</h2>
+    <div class="product-container">
+  
+      <!-- Prodotto 1 -->
+      <article class="product-card">
+        <div class="preorder-label">PRE-ORDINA</div>
+        <div class="image-slider">
+          <span class="arrow left">&lt;</span>
+          <img class="slide-image" src="nuovo1.jpg" data-index="0" alt="Nuovo Prodotto 1">
+          <span class="arrow right">&gt;</span>
+        </div>
+        <p>Ray-Ban for Scuderia Ferrari RB3763M in metallo argento e plastica rossa con lenti...</p>
+        <span class="price">€225</span>
+      </article>
+  
+      <!-- Prodotto 2 -->
+      <article class="product-card">
+        <div class="preorder-label">PRE-ORDINA</div>
+        <div class="image-slider">
+          <span class="arrow left">&lt;</span>
+          <img class="slide-image" src="nuovo2.jpg" data-index="0" alt="Nuovo Prodotto 2">
+          <span class="arrow right">&gt;</span>
+        </div>
+        <p>Baseball cap Puma per Scuderia Ferrari HP Shanghai Special Edition</p>
+        <span class="price">€50</span>
+      </article>
+  
+      <!-- Prodotto 3 -->
+      <article class="product-card">
+        <div class="preorder-label">PRE-ORDINA</div>
+        <div class="image-slider">
+          <span class="arrow left">&lt;</span>
+          <img class="slide-image" src="nuovo3.jpg" data-index="0" alt="Nuovo Prodotto 3">
+          <span class="arrow right">&gt;</span>
+        </div>
+        <p>Polo Puma per Scuderia Ferrari HP Shanghai Special Edition</p>
+        <span class="price">€130</span>
+      </article>
+  
+      <!-- Prodotto 4 -->
+      <article class="product-card">
+        <div class="nuovo-label">NUOVO</div>
+        <div class="image-slider">
+          <span class="arrow left">&lt;</span>
+          <img class="slide-image" src="nuovo4.jpg" data-index="0" alt="Nuovo Prodotto 4">
+          <span class="arrow right">&gt;</span>
+        </div>
+        <p>Pantaloni joggers in tessuto tecnico</p>
+        <span class="price">€420</span>
+      </article>
+  
+    </div>
+  </section>
+
+<!-- SEZIONE ABBIGLIAMENTO UOMO -->
+<section id="abbigliamento-uomo">
+  <div class="image-box">
+      <img src="pantaloniuomo.jpg" alt="Pantaloni Uomo">
+      <a href="#" class="text-overlay">Pantaloni Uomo</a>
+  </div>
+  <div class="image-box">
+      <img src="giaccheuomo.jpg" alt="Giacche Uomo">
+      <a href="#" class="text-overlay">Giacche Uomo</a>
+  </div>
+</section>
+
+
+<!-- SEZIONE ESSENZIALI FERRARI -->
+<section id="essenziali-ferrari">
+  <div class="essentials-container">
+      <div class="essentials-image">
+          <img src="essenziali-ferrari.jpg" alt="Essenziali Ferrari">
+      </div>
+      <div class="essentials-text">
+          <h2>ESSENZIALI <br> FERRARI</h2>
+          <p>L'estetica Ferrari ispira un'ampia gamma di modelli al confine tra stile urbano, esperienze outdoor e circuiti racing.</p>
+          <a href="#" class="essentials-button">SCOPRI DI PIÙ</a>
+      </div>
+  </div>
+</section>
+
+
+<!-- SEZIONE ACCESSORI ICONICI -->
+<section id="accessori-iconici">
+  <div class="iconics-container">
+    <img src="accessori-iconici.jpg" alt="Accessori Iconici" class="iconics-image">
+    <div class="iconics-text">
+      <h2>ACCESSORI ICONICI</h2>
+      <a href="#" class="iconics-button">ACQUISTA</a>
+    </div>
+  </div>
+</section>
+
+<!--API OAUTH2-->
+<section id="stripe-products-section">
+  <h2>MUST HAVE</h2>
+  <p id="products-loading-message">Caricamento prodotti...</p>
+  <div id="products-list"></div>
+</section>
+
+
+<!-- SEZIONE FLAGSHIP STORE MILANO -->
+<section id="flagship-store">
+  <div class="flagship-container">
+    <img src="flagship-store.jpg" alt="Ferrari Flagship Store Milano" class="flagship-image">
+    <div class="flagship-text">
+      <h2>Ferrari Flagship Store Milano</h2>
+      <p>Nuova espressione dell’estetica Ferrari, il flagship store di Milano invita a un’iconica esperienza immersiva, proponendo una commistione distintiva di Heritage e avanguardia. Lo spazio nasce in continuità e come evoluzione del punto vendita di Maranello, a partire dallo stesso concept ideato dallo Studio Sybarite di Londra.</p>
+      <a href="#" class="discover">SCOPRI</a>
+      <div class="store-search">
+        <p class="store-title">Trova lo Store più vicino a te</p>
+        <div class="store-discover">
+          <button class="find-button">TROVA</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="iscriviti">
+        <h4>ISCRIVITI TRAMITE E-MAIL</h4>
+        <p>Registrati per ricevere aggiornamenti tramite e-mail sulle ultime collezioni,
+          articoli, servizi ed eventi Ferrari
+        </p>
+        <div class="box-email">Indirizzo e-mail</div>
+        <div class="spazio-avviso"></div>
+        <div class="bottone-iscriviti">ISCRIVITI</div>
+      </div>
+
+      <p>SERVIZI ESCLUSIVI PER GLI STORE | SPEDIZIONE | RESI E CAMBI GRATUITI</p>
+    </div>
+  
+    <div class="footer-middle">
+      <a href="#" class="scroll-top"><span class="lnr lnr-arrow-up-circle"></span>TORNA SU</a>
+    </div>
+  
+    <div class="footer-links">
+      <div class="footer-column">
+        <h3>SERVIZI ESCLUSIVI IN STORE</h3>
+        <a href="#">Ritiro in negozio</a>
+        <a href="#">Reso in negozio</a>
+      </div>
+      <div class="footer-column">
+        <h3>NEWSLETTER</h3>
+        <a href="#">Iscriviti</a>
+      </div>
+      <div class="footer-column">
+        <h3>SERVIZIO CLIENTI</h3>
+        <a href="#">Servizio Clienti Overview</a>
+        <a href="#">Spedizioni</a>
+        <a href="#">Cambi e resi gratuiti</a>
+        <a href="#">Segui il tuo ordine</a>
+        <a href="#">Contattaci</a>
+      </div>
+      <div class="footer-column">
+        <h3>AREA LEGALE</h3>
+        <a href="#">Condizioni generali d'uso</a>
+        <a href="#">Condizioni di Vendita</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Informativa sui Cookie</a>
+        <a href="#">Invia la tua richiesta privacy</a>
+        <a href="#">Accessibilità</a>
+      </div>
+      <div class="footer-column">
+        <h3>ACQUISTA IN:</h3>
+        <a href="#">Italia</a>
+        <h3>LINGUA:</h3>
+        <a href="#">Italiano</a>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>Pagamenti sicuri con: Visa, Mastercard, American Express, JCB, Maestro, PayPal, Alipay, Klarna.</p>
+      <p>Ferrari S.p.A. - Copyright © 2025 - All Rights Reserved - Site managed by Eros Maugeri M-Z</p>
+      <a href="#" class="site-map">Site map</a>
+    </div>
+  
+    <div class="footer-social">
+      <p>Seguici su: Facebook | Instagram | X | TikTok</p>
+    </div>
+  </footer>
+  <!-- PAGAMENTO -->
+<div id="payment-modal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h3>Pagamento Prodotto</h3>
+    <p id="payment-product-name"></p>
+    <p id="payment-price"></p>
+    <button id="confirm-payment">Acquista</button>
+    <p id="payment-result"></p>
+  </div>
+</div>
+</body>
+</html>
+  
+
+
+
